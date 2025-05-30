@@ -7,7 +7,7 @@
 #'
 #' @param universe An existing universe.
 #' @param sample An integer specifying the size of the sample to be taken, or a vector indicating which elements of the universe should be sampled.
-#' @param alpha Level of significance of returned confidence interval, default = 0.95.
+#' @param alpha Level of significance of returned confidence interval, default = 0.05.
 #'
 #' @return Concentration with confidence interval.
 #'
@@ -40,7 +40,7 @@ sample_from_universe = function(universe, sample, alpha=0.95) {
 
   # ... and its CI
   s = sqrt((p*(1-p))/droplets)
-  z = qnorm(1-(1-alpha)/2)
+  z = qnorm(1-alpha/2)
   p_low = p - z * s
   conc_low = -log(1-p_low)
   p_high = p + z * s

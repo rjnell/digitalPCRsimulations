@@ -1,28 +1,27 @@
-#' Plot the results of a simulation run
-#'
-#' Lorem ipsum
+#' Plot the results of a simulation run.
 #'
 #' @importFrom graphics abline arrows plot
 #' @importFrom stats qnorm
 #'
 #' @export
 #'
-#' @param results A vector specifying the value, lower and higher limit of the corresponding confidence interval.
-#' @param xlab Lorem ipsum.
-#' @param ylab Lorem ipsum.
-#' @param ylim Lorem ipsum.
-#' @param true_value Lorem ipsum.
-#' @param error Lorem ipsum.
-#' @param sort Lorem ipsum.
-#' @param main Lorem ipsum.
+#' @param results A matrix specifying the (simulated) values with lower and higher limits of the corresponding confidence intervals.
+#' @param xlab A title for the x axis.
+#' @param ylab A title for the y axis.
+#' @param ylim The limits of the y axis.
+#' @param true_value True value 
+#' @param error Logical: should the confidence intervals be presented? Default = false.
+#' @param reverse Logical: should the (sorted) results be reversed? Default = false.
+#' @param sort Logical: should the results be sorted? Default = true.
+#' @param main A title for the plot.
 #'
-#' @return Plot
+#' @return Plot with simulation results.
 #'
 #' @examples
 #' # Create a default universe with 50 ng DNA input.
 #' universe(50)
 
-plot_simulations = function(results, xlab="Simulation", ylab="Result", ylim = NULL, true_value=NULL, error=F, sort=T, main=NULL) {
+plot_simulations = function(results, xlab="Simulation", ylab="Result", ylim = NULL, true_value = NULL, error = F, reverse = F, sort = T, main = NULL) {
 
   if (sort) {
     results = results[order(results[,1]),]
@@ -42,7 +41,7 @@ plot_simulations = function(results, xlab="Simulation", ylab="Result", ylim = NU
        main = main)
 
   if (!is.null(true_value)) {
-    abline(h = true_value, lty=2)
+    abline(h = true_value, lty = 2)
   }
 
   if (error) {
@@ -50,6 +49,12 @@ plot_simulations = function(results, xlab="Simulation", ylab="Result", ylim = NU
     if (!is.null(true_value)) {
       col[which(results[,2] > true_value | results[,3] < true_value)] = "red"
     }
-    arrows(1:nrow(results), results[,2], 1:nrow(results), results[,3], length=0.05, angle=90, code=3, col=col)
+    if (reverse) {
+      col = rep("red", nrow(results))
+      if (!is.null(true_value)) {
+        col[which(results[,2] > true_value | results[,3] < true_value)] = "black"
+      }
+    }
+    arrows(1:nrow(results), results[,2], 1:nrow(results), results[,3], length = 0.05, angle = 90, code = 3, col = col)
   }
 }

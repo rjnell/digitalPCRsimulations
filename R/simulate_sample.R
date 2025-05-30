@@ -1,6 +1,4 @@
-#' Simulate a sample: return a random selection of droplets.
-#'
-#' Lorem.
+#' Simulate a sample: return a random selection of droplets (or partitions).
 #'
 #' @export
 #'

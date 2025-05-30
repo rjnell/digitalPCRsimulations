@@ -1,10 +1,10 @@
 #' Calculate statistics from simulation result table.
-#'
-#' Lorem.
+#' 
+#' @importFrom stats sd
 #'
 #' @export
 #'
-#' @param results A table with the results of the simulation.
+#' @param results A matrix specifying the (simulated) values with lower and higher limits of the corresponding confidence intervals.
 #' @param true_value The true value which was simulated.
 #'
 #' @return List with statistics.

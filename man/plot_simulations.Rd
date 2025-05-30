@@ -5,7 +5,7 @@
 \title{Plot the results of a simulation run}
 \usage{
 plot_simulations(results, xlab = "Simulation", ylab = "Result",
-  ylim = NULL, true_value = NULL, error = F, sort = T,
+  ylim = NULL, true_value = NULL, error = F, reverse = F, sort = T,
   main = NULL)
 }
 \arguments{
@@ -20,6 +20,8 @@ plot_simulations(results, xlab = "Simulation", ylab = "Result",
 \item{true_value}{Lorem ipsum.}
 
 \item{error}{Lorem ipsum.}
+
+\item{reverse}{Lorem ipsum.}
 
 \item{sort}{Lorem ipsum.}
 

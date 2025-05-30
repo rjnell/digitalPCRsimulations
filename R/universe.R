@@ -1,6 +1,6 @@
 #' Create a universe.
 #'
-#' A droplet digital PCR experiment may be seen as a random statistical sampling of an infinite universe consisting of droplets filled with DNA molecules.
+#' A droplet digital PCR experiment may be seen as a random statistical sampling of an infinite universe consisting of droplets (or partitions) filled with DNA molecules.
 #' To simulate this process, we create a finite, but very large universe with empty droplets.
 #' Based on a given CPD (=copies/droplet), droplets in this universe are randomly filled. These tasks are performed by the following function `universe`:
 #'

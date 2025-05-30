@@ -4,8 +4,8 @@
 \alias{simulate_ratios}
 \title{Simulate ratios to be taken from two existing universes.}
 \usage{
-simulate_ratios(universe_1, universe_2, n_droplets = 20000,
-  n_simulations = 100, alpha = 0.95)
+simulate_ratios(universe_1, universe_2, n_droplets,
+  n_simulations, alpha = 0.05)
 }
 \arguments{
 \item{universe_1}{A universe.}
