@@ -8,8 +8,11 @@ To perform digital PCR experiments in silico, we developed R library digitalPCRs
 # Install devtools from CRAN
 install.packages("devtools")
 
-# Install digitalPCRsimulations via devtools
+# Install digitalPCRsimulations from GitHub via devtools
 devtools::install_github("rjnell/digitalPCRsimulations")
+
+# Install digitalPCRsimulations from local file via devtools
+devtools::install_local("digitalPCRsimulations.zip")
 ```
 
 ## Usage
